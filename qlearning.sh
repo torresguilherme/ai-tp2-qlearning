@@ -1,2 +1,2 @@
 #!/bin/bash
-cargo run $1 0.3 0.9 300
+cargo run --release $1 0.3 0.9 300
