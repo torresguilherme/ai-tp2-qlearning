@@ -1,0 +1,6 @@
+[package]
+name = "ai-tp2-qlearning"
+version = "0.1.0"
+authors = ["Guilherme Torres <guilhermetorres97@gmail.com>"]
+
+[dependencies]
