@@ -53,6 +53,6 @@ fn main()
     let mut posY = 0;
     for i in 0..iterations
     {
-        qlearning::learn(&map, &mut qValues, &mut posX, &mut posY);
+        qlearning::learn(&map, &mut qValues, &learnRate, &discount, &mut posX, &mut posY);
     }
 }
