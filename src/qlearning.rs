@@ -57,14 +57,8 @@ pub fn learn(map: &Vec<Vec<char>>, qValues: &mut Vec<Vec<Vec<f32>>>,
     learnRate: &f32, discount: &f32, posX: &mut usize, posY: &mut usize)
 {
     // escolhe acao
-    let mut act = 0;
-    for i in 0..4
-    {
-        if(qValues[*posX][*posY][i] > qValues[*posX][*posY][act])
-        {
-            act = i;
-        }
-    }
+    let act = rand::thread_rng().gen_range(0, 4);
+
     // atualiza o valor de q:
     // q(s, a) <- (1-a)q(s, a) + a(r + c*max q(s', a'))
     if(act == 0)
