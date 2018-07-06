@@ -1,8 +1,10 @@
 use std::fs::File;
+use std::io::prelude::*;
 use std::error::Error;
 use std::env;
 use std::io::{BufRead, BufReader};
 mod qlearning;
+mod output;
 
 fn main()
 {
@@ -65,5 +67,5 @@ fn main()
     }
 
     // imprime os resultados em um arquivo de saida
-    println!("{:?}", qValues);
+    output::writeOutput(&map, &qValues);
 }
