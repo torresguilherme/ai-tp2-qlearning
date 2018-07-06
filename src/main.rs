@@ -12,7 +12,7 @@ fn main()
     let inputName = &args[1];
     let mut learnRate: f32 = args[2].parse().unwrap();
     let mut discount: f32 = args[3].parse().unwrap();
-    let iterations: i16 = args[4].parse().unwrap();
+    let iterations: u32 = args[4].parse().unwrap();
 
     // open file
     let mut reader = BufReader::new(File::open(inputName).unwrap());
@@ -52,7 +52,6 @@ fn main()
     let mut posX: usize = 0;
     let mut posY: usize = 0;
     qlearning::generateRandomPos(&map, &mut posX, &mut posY);
-    println!("{}, {}", posX, posY);
 
     for i in 0..iterations
     {
@@ -66,4 +65,5 @@ fn main()
     }
 
     // imprime os resultados em um arquivo de saida
+    println!("{:?}", qValues);
 }
