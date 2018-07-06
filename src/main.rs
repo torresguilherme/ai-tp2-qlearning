@@ -48,11 +48,21 @@ fn main()
         }
     }
 
-    // iterate q-learning n times
-    let mut posX = 0;
-    let mut posY = 0;
+    // inicia posicoes com valores aleatorios
+    let mut posX: usize = 0;
+    let mut posY: usize = 0;
+    qlearning::generateRandomPos(&map, &mut posX, &mut posY);
+
     for i in 0..iterations
     {
+        // atualiza o valor para a posicao e acao atual
         qlearning::learn(&map, &mut qValues, &learnRate, &discount, &mut posX, &mut posY);
+        // se for um terminal, reposiciona o agente aleatoriamente
+        if(map[posX][posY] == '&' || map[posX][posY] == '0')
+        {
+            qlearning::generateRandomPos(&map, &mut posX, &mut posY);
+        }
     }
+
+    // imprime os resultados em um arquivo de saida
 }
