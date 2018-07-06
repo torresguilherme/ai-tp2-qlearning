@@ -52,6 +52,7 @@ fn main()
     let mut posX: usize = 0;
     let mut posY: usize = 0;
     qlearning::generateRandomPos(&map, &mut posX, &mut posY);
+    println!("{}, {}", posX, posY);
 
     for i in 0..iterations
     {
